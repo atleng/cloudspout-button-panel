@@ -141,7 +141,7 @@ export class ButtonPanel extends PureComponent<Props, ButtonPanelState> {
     const exeucte = () => {
       this.setState({ api_call: 'IN_PROGRESS' });
 
-      const url = new URL(this.interpolateVariables(options.url));
+      const url = new URL(this.interpolateVariables(options.url), window.location.href);
       console.log(options.method, ' to ', url, ' with params as ', options.type);
 
       let fetchOpts = this.prepareFetchOpts(url);
